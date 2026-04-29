@@ -1,24 +1,61 @@
-# Content-Based-Movie-Recommender
-This is a Content-Based Movie Recommendation System developed as part of my BCA 5th-semester curriculum. The system analyzes a dataset of 5,000 movies to provide personalized recommendations based on the user's interests.
+# 🎬 CineAI — Movie Recommendation System
 
-# Movie Recommendation System 🎬
-A Machine Learning-based movie recommender system built using **Python** and **Streamlit**.
+A content-based movie recommender built with Python and Streamlit.
+Just select a movie and get 8 similar movies with match percentage instantly.
 
-## 🚀 Overview
-This project suggests the top 5 similar movies based on a user's selection. It uses the **TMDB 5000 Movies Dataset** and applies Content-Based Filtering techniques.
+---
 
-## 🛠️ Tech Stack
-* **Language:** Python
-* **Frontend:** Streamlit
-* **Libraries:** Pandas, NumPy, Scikit-learn, Pickle
+## 🗂️ Files in this Repo
 
-## 🧠 How it Works
-1. **Data Preprocessing**: Merged datasets and handled missing values.
-2. **Text Vectorization**: Used `CountVectorizer` to convert movie tags into vectors.
-3. **Similarity**: Calculated `Cosine Similarity` to find the distance between movies.
-4. **Recommendation**: Fetches the closest 5 movies for any given input.
+| File | Description |
+|------|-------------|
+| `app.py` | Main Streamlit app |
+| `movie_dict.pkl` | Movie dataset (4,800 movies) |
+| `requirements.txt` | Required Python libraries |
 
-## 💻 Installation
-1. Clone the repo: `git clone <your-repo-link>`
-2. Install requirements: `pip install -r requirements.txt`
-3. Run the app: `streamlit run app.py`
+> `similarity.pkl` is NOT needed — the app builds it automatically on startup.
+
+---
+
+## ▶️ How to Run
+
+**Step 1** — Clone the repo
+```bash
+git clone https://github.com/YOUR_USERNAME/cineai-recommender.git
+cd cineai-recommender
+```
+
+**Step 2** — Install libraries
+```bash
+pip install -r requirements.txt
+```
+
+**Step 3** — Run the app
+```bash
+streamlit run app.py
+```
+
+Then open `http://localhost:8501` in your browser.
+
+> First launch takes about 3 seconds to build the model. After that it's instant.
+
+---
+
+## 🧠 How It Works
+
+1. Movie tags (genre, cast, keywords) are converted to vectors using **CountVectorizer**
+2. **Cosine Similarity** finds how close each movie is to another
+3. Top 8 most similar movies are shown with a match % score
+
+---
+
+## 🛠️ Built With
+
+- Python
+- Streamlit
+- Scikit-learn
+- Pandas & NumPy
+
+---
+
+Made with ❤️ — give it a ⭐ if you liked it!
